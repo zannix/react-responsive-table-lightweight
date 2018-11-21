@@ -1,0 +1,20 @@
+{
+  "name": "react-responsive-table-lightweight-example",
+  "homepage": "https://zannix.github.io/react-responsive-table-lightweight",
+  "version": "0.0.0",
+  "license": "MIT",
+  "private": true,
+  "dependencies": {
+    "prop-types": "^15.6.2",
+    "react": "^16.4.1",
+    "react-dom": "^16.4.1",
+    "react-scripts": "^1.1.4",
+    "react-responsive-table-lightweight": "file:.."
+  },
+  "scripts": {
+    "start": "react-scripts start",
+    "build": "react-scripts build",
+    "test": "react-scripts test --env=jsdom",
+    "eject": "react-scripts eject"
+  }
+}
