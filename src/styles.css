@@ -1,8 +1,58 @@
-/* add css styles here (optional) */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin:1em auto;
+}
 
-.test {
-  display: inline-block;
-  margin: 2em auto;
-  border: 2px solid #000;
-  font-size: 2em;
+table th {
+  background: #eee;
+  font-weight: bold;
+}
+
+table td, table th {
+  padding: 10px;
+  text-align: left;
+}
+
+table tr:nth-of-type(even) {
+  background: #eee;
+}
+
+@media
+only screen and (max-width: 760px),
+(min-device-width: 560px) and (max-device-width: 1024px)  {
+
+  table {
+    width: 100%;
+  }
+
+  table, table thead, table tbody,table th,table td,table tr {
+    display: block;
+  }
+
+  table thead tr {
+    position: absolute;
+    top: -9999px;
+    left: -9999px;
+  }
+
+  table td {
+    border: none;
+    position: relative;
+    padding-left: 50%;
+    word-break: break-all;
+  }
+
+  table td:before {
+    position: absolute;
+    top: 6px;
+    left: 6px;
+    width: 45%;
+    padding-right: 10px;
+    white-space: nowrap;
+    content: attr(data-column);
+    color: #000;
+    font-weight: bold;
+  }
+
 }

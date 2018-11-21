@@ -1,7 +1,26 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import './index.css'
-import App from './App'
+import LTable from './App'
 
-ReactDOM.render(<App />, document.getElementById('root'))
+let columns = {
+    name: "Name",
+    surname: "Surname",
+    address: "Street address"
+};
+
+let rows = [
+    {
+        name : "John",
+        surname: "Doe",
+        address: "Dover Street 18"
+    },
+    {
+        name : "Mark",
+        surname: "Wilton",
+        address: "Williams St. 2"
+    }
+
+];
+
+ReactDOM.render(<LTable styles={{"fontSize": "1.1em"}} columns={columns} rows={rows} />, document.getElementById('root'));

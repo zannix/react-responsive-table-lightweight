@@ -1,7 +1,7 @@
-import ExampleComponent from './'
+import LTable from './'
 
-describe('ExampleComponent', () => {
+describe('LTable', () => {
   it('is truthy', () => {
-    expect(ExampleComponent).toBeTruthy()
+    expect(LTable).toBeTruthy()
   })
 })

@@ -15,16 +15,45 @@ npm install --save react-responsive-table-lightweight
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'react-responsive-table-lightweight'
+import LTable from 'react-responsive-table-lightweight'
 
 class Example extends Component {
   render () {
+  
+      let columns = {
+          name: "Name",
+          surname: "Surname",
+          address: "Street address"
+      };
+      
+      let rows = [
+          {
+              name : "John",
+              surname: "Doe",
+              address: "Dover Street 18"
+          },
+          {
+              name : "Mark",
+              surname: "Wilton",
+              address: "Williams St. 2"
+          }
+      ];
+  
     return (
-      <MyComponent />
+      <LTable rows={rows} columns={columns} styles={false} />
     )
   }
 }
 ```
+
+## Instructions
+
+Only two props need to be passed to the component - *columns* and *rows* (*styles* is optional and can be included to extend default styling)
+
+*Columns* is an object denoting titles of table columns. 
+
+*Rows* is an array of objects where keys of those objects need to match *columns* keys.
+
 
 ## License
 

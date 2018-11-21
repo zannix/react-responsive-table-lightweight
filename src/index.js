@@ -1,22 +1,57 @@
 import React, { Component } from 'react'
-import PropTypes from 'prop-types'
-
 import styles from './styles.css'
 
-export default class ExampleComponent extends Component {
-  static propTypes = {
-    text: PropTypes.string
-  }
+export default class LTable extends Component {
 
-  render() {
-    const {
-      text
-    } = this.props
+    constructor(props){
+        super(props);
+        this.state={
+            rows: props.rows,
+            columns: props.columns,
+            styles: props.styles
+        };
+    }
 
-    return (
-      <div className={styles.test}>
-        Example Component: {text}
-      </div>
-    )
-  }
+    static getDerivedStateFromProps(nextProps, prevState) {
+        if(nextProps.rows!==prevState.rows || nextProps.columns!==prevState.columns){
+            return { rows: nextProps.rows, columns: nextProps.columns};
+        }
+
+        return null;
+    }
+
+    render() {
+        if(this.state.rows && this.state.columns){
+
+            return (
+                <table style={this.state.styles}>
+                    <thead>
+                    <tr>
+                        {Object.keys(this.state.columns).map((columnKey, i) => {
+                            return (
+                                <th key={i}>{this.state.columns[columnKey]}</th>
+                            );
+                        })}
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {this.state.rows.map((row, i) => {
+                        return (
+                            <tr key={i}>
+                                {Object.keys(this.state.columns).map((columnKey, i) => {
+                                    return (
+                                        <td data-column={this.state.columns[columnKey]} key={i}>{row[columnKey]}</td>
+                                    );
+                                })}
+                            </tr>
+                        );
+                    })}
+                    </tbody>
+                </table>
+            );
+        }
+
+        return null;
+
+    }
 }
