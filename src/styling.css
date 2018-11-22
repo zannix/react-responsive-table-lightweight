@@ -1,20 +1,20 @@
-table {
+table[data-spec="lTable"] {
   width: 100%;
   border-collapse: collapse;
   margin:1em auto;
 }
 
-table th {
+table[data-spec="lTable"] th {
   background: #eee;
   font-weight: bold;
 }
 
-table td, table th {
+table[data-spec="lTable"] td, table th {
   padding: 10px;
   text-align: left;
 }
 
-table tr:nth-of-type(even) {
+table[data-spec="lTable"] tr:nth-of-type(even) {
   background: #eee;
 }
 
@@ -22,28 +22,28 @@ table tr:nth-of-type(even) {
 only screen and (max-width: 760px),
 (min-device-width: 560px) and (max-device-width: 1024px)  {
 
-  table {
+  table[data-spec="lTable"] {
     width: 100%;
   }
 
-  table, table thead, table tbody,table th,table td,table tr {
+  table[data-spec="lTable"], table[data-spec="lTable"] thead, table[data-spec="lTable"] tbody,table[data-spec="lTable"] th,table[data-spec="lTable"] td,table[data-spec="lTable"] tr {
     display: block;
   }
 
-  table thead tr {
+  table[data-spec="lTable"] thead tr {
     position: absolute;
     top: -9999px;
     left: -9999px;
   }
 
-  table td {
+  table[data-spec="lTable"] td {
     border: none;
     position: relative;
     padding-left: 50%;
     word-break: break-all;
   }
 
-  table td:before {
+  table[data-spec="lTable"] td:before {
     position: absolute;
     top: 6px;
     left: 6px;

@@ -1,7 +1,8 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 
-import LTable from './App'
+import LTable from 'react-responsive-table-lightweight'
+
 
 let columns = {
     name: "Name",

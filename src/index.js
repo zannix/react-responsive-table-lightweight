@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import styles from './styles.css'
+import styles from './styling.css'
 
 export default class LTable extends Component {
 
@@ -24,7 +24,7 @@ export default class LTable extends Component {
         if(this.state.rows && this.state.columns){
 
             return (
-                <table style={this.state.styles}>
+                <table data-spec="lTable" style={this.state.styles}>
                     <thead>
                     <tr>
                         {Object.keys(this.state.columns).map((columnKey, i) => {
